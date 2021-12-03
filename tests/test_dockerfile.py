@@ -11,12 +11,12 @@ class TestDockerfile:
             with open(f'{os.path.join(settings.BASE_DIR, "Dockerfile")}', 'r') as f:
                 dockerfile = f.read()
         except FileNotFoundError:
-            assert False, 'Проверьте, что добавили файл Dockerfile'
+            assert False, 'Проверьте, что файл Dockerfile существует'
 
         assert re.search(r'FROM\s+python:', dockerfile), (
-            'Проверьте, что добавили инструкцию FROM с указанием образа python в файл Dockerfile'
+            'Проверьте, что в файл Dockerfile добавлена инструкция FROM с указанием образа python'
         )
         assert re.search(r'((RUN)|(&&))\s+pip(3|)\s+install\s+-r.+requirements\.txt', dockerfile), (
-            'Проверьте, что добавили инструкцию RUN с установкой зависимостей из файла '
-            'requirements.txt в файл Dockerfile'
+            'Проверьте, что в Dockerfile добавлена инструкция RUN с установкой зависимостей '
+            'из файла requirements.txt'
         )

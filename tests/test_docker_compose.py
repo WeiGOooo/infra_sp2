@@ -8,7 +8,7 @@ class TestDockerfileCompose:
 
     def test_infra_structure(self):
         assert 'infra' in os.listdir(root_dir), (
-            f'Проверьте, что по пути {root_dir} есть папка `infra`'
+            f'Проверьте, что в репозитории {root_dir} создана папка `infra`'
         )
         assert os.path.isdir(infra_dir_path), (
             f'Проверьте, что {infra_dir_path} - это папка, а не файл'
@@ -19,8 +19,8 @@ class TestDockerfileCompose:
             with open(f'{os.path.join(infra_dir_path, "docker-compose.yaml")}', 'r') as f:
                 docker_compose = f.read()
         except FileNotFoundError:
-            assert False, f'Проверьте, что добавили файл `docker-compose.yaml` в директорию {infra_dir_path} '
+            assert False, f'Проверьте, что в директорию {infra_dir_path} добавлен файл `docker-compose.yaml`'
 
         assert re.search(r'image:\s+postgres:', docker_compose), (
-            'Проверьте, что добавили образ postgres:latest в файл docker-compose.yaml'
+            'Проверьте, что  в файл docker-compose.yaml добавлен образ postgres:latest'
         )
