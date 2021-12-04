@@ -12,7 +12,7 @@
 ***
 ### Проект:
 ```
-git clone git@github.com:WeiGOooo/infra_sp2.git
+git clone https://github.com/WeiGOooo/infra_sp2.git
 ```
 ## Установка
 1. Установка docker и docker-compose
