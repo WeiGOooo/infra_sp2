@@ -12,7 +12,7 @@
 ***
 ### Проект:
 ```
-https://github.com/WeiGOooo/api_yamdb.git
+git clone https://github.com/WeiGOooo/infra_sp2.git
 ```
 ## Установка
 1. Установка docker и docker-compose
